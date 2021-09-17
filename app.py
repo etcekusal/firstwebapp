@@ -1,7 +1,8 @@
 import streamlit as st
+import time
 st.title("Movie Comment Sentiment Classifier Using Sequential Neural Network")
 st.subheader("Try it ! ")
-
+st.subheader("Just type any comment of any movie and the model will classify it.\n\n")
 import numpy as np 
 import re
 import tensorflow as tf
@@ -53,12 +54,30 @@ def predict(tokenizer,model,comment):
         return "Positive"
     
 def main():
-    comment = st.text_input("Enter your comment","Type here...")
+    comment = st.text_area("Enter your comment",height=30)
     prediction=""
-    if st.button("Submit"):
-        prediction = predict(tokenizer,model,comment)
-        st.success("Your Comment Sentiment is : "+prediction)
-    st.subheader("Created By Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")
+    col1, col2, col3 , col4, col5 = st.columns(5)
+    check = False
+    with col1:
+        pass
+    with col2:
+        pass
+    with col4:
+        pass
+    with col5:
+        pass
+    with col3 :
+        check = st.button("Submit")
+    if check == True:
+            st.text("Almost done ..... ")
+            bar = st.progress(0)
+            for i in range(100):
+                bar.progress(i + 1)
+                time.sleep(0.01)
+            prediction = predict(tokenizer,model,comment)
+    if (check==True):
+            st.success("Your Comment Sentiment is : "+prediction)
+    st.subheader("Created by Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")
 if __name__ == "__main__":
     main()
     

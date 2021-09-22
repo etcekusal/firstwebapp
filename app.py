@@ -80,7 +80,7 @@ def main():
             
     if (check==True):
             st.success("Your Comment Sentiment is : "+prediction+ " , ............ Play the audio to have more fun ... " )
-            text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction + " : : Please don't foget to give us feedback"
+            text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction + " : : Please don't foget to give us feedback and after giving it see what happens and run it. Hope you will have more fun"
             tts = gTTS(text,lang='en', tld='ca')
             tts.save("check.mp3")
             #audio = "check.mp3"

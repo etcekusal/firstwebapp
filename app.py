@@ -90,19 +90,21 @@ def main():
             st.audio(audio_bytes, format='audio/ogg',start_time=0)
             feedback = st.text_area("Enter your feedback..",height=20)
             prediction = predict(tokenizer,model,feedback)
-            if prediction=="Positive":
+            check = st.button("Submit Feedback")
+            if check==True:
+              if prediction=="Positive":
                 tts = gTTS("Thank you very much for experiencing fun with this.. Bye ")
                 tts.save("check.mp3")
                 audio_file = open("check.mp3", 'rb')
                 audio_bytes = audio_file.read()
                 st.audio(audio_bytes, format='audio/ogg',start_time=0)
-            if prediction=="Neutral":
+              if prediction=="Neutral":
                 tts = gTTS("Thank you very much for your valuable suggestion. Bye ")
                 tts.save("check.mp3")
                 audio_file = open("check.mp3", 'rb')
                 audio_bytes = audio_file.read()
                 st.audio(audio_bytes, format='audio/ogg',start_time=0)
-            else:
+              else:
                 tts = gTTS("Sorry to hear that you are not comfortable with us. We are improving for better user experience. Bye ")
                 tts.save("check.mp3")
                 audio_file = open("check.mp3", 'rb')

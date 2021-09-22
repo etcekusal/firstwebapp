@@ -88,6 +88,26 @@ def main():
             audio_file = open("check.mp3", 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/ogg',start_time=0)
+            feedback = st.text_area("Enter your comment",height=30)
+            prediction = predict(tokenizer,model,feedback)
+            if prediction=="Positive":
+                tts = gTTS("Thank you very much for experiencing fun with this.. Bye ")
+                tts.save("check.mp3")
+                audio_file = open("check.mp3", 'rb')
+                audio_bytes = audio_file.read()
+                st.audio(audio_bytes, format='audio/ogg',start_time=0)
+            if prediction=="Neutral":
+                tts = gTTS("Thank you very much for your valuable suggestion. Bye ")
+                tts.save("check.mp3")
+                audio_file = open("check.mp3", 'rb')
+                audio_bytes = audio_file.read()
+                st.audio(audio_bytes, format='audio/ogg',start_time=0)
+            else:
+                tts = gTTS("Sorry to hear that you are not comfortable with us. We are improving for better user experience. Bye ")
+                tts.save("check.mp3")
+                audio_file = open("check.mp3", 'rb')
+                audio_bytes = audio_file.read()
+                st.audio(audio_bytes, format='audio/ogg',start_time=0)
     st.subheader("Created by Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")
 if __name__ == "__main__":
     main()

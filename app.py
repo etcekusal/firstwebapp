@@ -81,9 +81,9 @@ def main():
             tts.save("check.mp3")
             #audio = "check.mp3"
     #Audio(audio)
-            audio_file = open("check.mp3", ‘rb’)
+            audio_file = open("check.mp3", 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format=‘audio/ogg’,start_time=0)
+            st.audio(audio_bytes, format='audio/ogg',start_time=0)
     if (check==True):
             st.success("Your Comment Sentiment is : "+prediction)
     st.subheader("Created by Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")

@@ -79,7 +79,7 @@ def main():
             prediction = predict(tokenizer,model,comment)
             
     if (check==True):
-            st.success("Your Comment Sentiment is : "+prediction+ " Play the audio to have more fun ... " )
+            st.success("Your Comment Sentiment is : "+prediction+ "                Play the audio to have more fun ... " )
             text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction
             tts = gTTS(text)
             tts.save("check.mp3")
@@ -87,7 +87,7 @@ def main():
     #Audio(audio)
             audio_file = open("check.mp3", 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/ogg',start_time=0,auto_play=True)
+            st.audio(audio_bytes, format='audio/ogg',start_time=0)
     st.subheader("Created by Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")
 if __name__ == "__main__":
     main()

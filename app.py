@@ -79,9 +79,9 @@ def main():
             prediction = predict(tokenizer,model,comment)
             tts = gTTS("you are actually mad")
             tts.save("check.mp3")
-            audio = "check.mp3"
+            #audio = "check.mp3"
     #Audio(audio)
-            audio_file = open(‘check.mp3’, ‘rb’)
+            audio_file = open("check.mp3", ‘rb’)
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format=‘audio/ogg’,start_time=0)
     if (check==True):

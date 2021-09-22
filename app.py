@@ -91,6 +91,11 @@ def main():
             feedback = st.text_area("Enter your feedback..",height=20)
             check = st.button("Submit Feedback")
             if check==True:
+              st.text("Almost done ..... ")
+              bar = st.progress(0)
+              for i in range(100):
+                bar.progress(i + 1)
+                time.sleep(0.01)
               prediction = predict(tokenizer,model,feedback)
               if prediction=="Positive":
                 tts = gTTS("Thank you very much for experiencing fun with this.. Bye ")

@@ -77,15 +77,17 @@ def main():
                 bar.progress(i + 1)
                 time.sleep(0.01)
             prediction = predict(tokenizer,model,comment)
-            tts = gTTS("you are actually mad")
+            
+    if (check==True):
+            st.success("Your Comment Sentiment is : "+prediction)
+            text = "you have written " + comment +" and Your Comment Sentiment is : "+prediction
+            tts = gTTS(text)
             tts.save("check.mp3")
             #audio = "check.mp3"
     #Audio(audio)
             audio_file = open("check.mp3", 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/ogg',start_time=0)
-    if (check==True):
-            st.success("Your Comment Sentiment is : "+prediction)
     st.subheader("Created by Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")
 if __name__ == "__main__":
     main()

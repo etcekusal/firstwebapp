@@ -89,9 +89,9 @@ def main():
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/ogg',start_time=0)
             feedback = st.text_area("Enter your feedback..",height=20)
-            prediction = predict(tokenizer,model,feedback)
             check = st.button("Submit Feedback")
             if check==True:
+              prediction = predict(tokenizer,model,feedback)
               if prediction=="Positive":
                 tts = gTTS("Thank you very much for experiencing fun with this.. Bye ")
                 tts.save("check.mp3")

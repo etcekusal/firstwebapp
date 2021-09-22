@@ -87,7 +87,7 @@ def main():
     #Audio(audio)
             audio_file = open("check.mp3", 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/ogg',start_time=0,autoplay=True)
+            st.audio(audio_bytes, format='audio/ogg',start_time=0,auto_play=True)
     st.subheader("Created by Kusal Bhattacharyya , Department Of ETCE , Jadavpur University")
 if __name__ == "__main__":
     main()

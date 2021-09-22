@@ -80,7 +80,7 @@ def main():
             
     if (check==True):
             st.success("Your Comment Sentiment is : "+prediction+ " , ............ Play the audio to have more fun ... " )
-            text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction
+            text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction + "Please don't foget to give us feedback"
             tts = gTTS(text)
             tts.save("check.mp3")
             #audio = "check.mp3"
@@ -91,25 +91,20 @@ def main():
     feedback = st.text_area("Enter your feedback..",height=20)
     check = st.button("Submit Feedback")
     if check==True:
-              st.text("Almost done ..... ")
-              bar = st.progress(0)
-              for i in range(100):
-                bar.progress(i + 1)
-                time.sleep(0.01)
-              prediction = predict(tokenizer,model,feedback)
-              if prediction=="Positive":
+          prediction = predict(tokenizer,model,feedback)
+          if prediction=="Positive":
                 tts = gTTS("Thank you very much for experiencing fun with this.. Bye ")
                 tts.save("check.mp3")
                 audio_file = open("check.mp3", 'rb')
                 audio_bytes = audio_file.read()
                 st.audio(audio_bytes, format='audio/ogg',start_time=0)
-              if prediction=="Neutral":
+          elif prediction=="Neutral":
                 tts = gTTS("Thank you very much for your valuable suggestion. Bye ")
                 tts.save("check.mp3")
                 audio_file = open("check.mp3", 'rb')
                 audio_bytes = audio_file.read()
                 st.audio(audio_bytes, format='audio/ogg',start_time=0)
-              else:
+          else:
                 tts = gTTS("Sorry to hear that you are not comfortable with us. We are improving for better user experience. Bye ")
                 tts.save("check.mp3")
                 audio_file = open("check.mp3", 'rb')

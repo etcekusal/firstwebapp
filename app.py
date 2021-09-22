@@ -88,7 +88,7 @@ def main():
             audio_file = open("check.mp3", 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/ogg',start_time=0)
-            feedback = st.text_area("Enter your comment",height=30)
+            feedback = st.text_area("Enter your feedback..",height=20)
             prediction = predict(tokenizer,model,feedback)
             if prediction=="Positive":
                 tts = gTTS("Thank you very much for experiencing fun with this.. Bye ")

@@ -79,7 +79,7 @@ def main():
             prediction = predict(tokenizer,model,comment)
             
     if (check==True):
-            st.success("Your Comment Sentiment is : "+prediction+ "                Play the audio to have more fun ... " )
+            st.success("Your Comment Sentiment is : "+prediction+ " , ............ Play the audio to have more fun ... " )
             text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction
             tts = gTTS(text)
             tts.save("check.mp3")

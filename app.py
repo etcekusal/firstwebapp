@@ -80,7 +80,7 @@ def main():
             
     if (check==True):
             st.success("Your Comment Sentiment is : "+prediction)
-            text = "you have written " + comment +" and Your Comment Sentiment is : "+prediction
+            text = "you have written       " + comment +"        and Your Comment Sentiment is : "+prediction
             tts = gTTS(text)
             tts.save("check.mp3")
             #audio = "check.mp3"

@@ -1,8 +1,8 @@
 import streamlit as st
 import time
-st.title("Movie Comment Sentiment Classifier Using Sequential Neural Network")
-st.subheader("Try it ! ")
-st.subheader("Just type any comment of any movie and the model will classify it.\n\n")
+st.title("Text Sentiment Classifier Using Sequential Neural Network")
+st.subheader("Try it ! It's updated version and Text to speech is added to have more better experience..")
+st.subheader("Just type any comment and the model will classify it.\n\n")
 import numpy as np 
 import re
 import tensorflow as tf
@@ -79,7 +79,7 @@ def main():
             prediction = predict(tokenizer,model,comment)
             
     if (check==True):
-            st.success("Your Comment Sentiment is : "+prediction+ " , ............ Play the audio to have more fun ... " )
+            #st.success("Your Comment Sentiment is : "+prediction+ " , ............ Play the audio to have more fun ... " )
             text = "you have written : " + comment +" : and Your Comment Sentiment is : "+prediction + " : : Please don't foget to give us feedback and after giving it see what happens and run it. Hope you will have more fun"
             tts = gTTS(text,lang='en', tld='ca')
             tts.save("check.mp3")

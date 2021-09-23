@@ -28,10 +28,10 @@ import pickle
 
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
-'''
-comments_store = open("comments.txt","a")
-feedback_store = open("feedbacks.txt","a")
-'''
+
+#comments_store = open("comments.txt","a")
+#feedback_store = open("feedbacks.txt","a")
+
 num_tokens = len(tokenizer.word_index) + 2
 embedding_dim = 100
 embedding_layer = Embedding(num_tokens,embedding_dim,trainable=False)

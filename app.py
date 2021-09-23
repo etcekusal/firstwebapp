@@ -29,7 +29,7 @@ import pickle
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
-comments_store = open("https://github.com/etcekusal/movie-comment-analysis/blob/main/comments.txt","a")
+#comments_store = open("https://github.com/etcekusal/movie-comment-analysis/blob/main/comments.txt","a")
 #feedback_store = open("feedbacks.txt","a")
 
 num_tokens = len(tokenizer.word_index) + 2
@@ -60,7 +60,7 @@ def predict(tokenizer,model,comment):
     
 def main():
     comment = st.text_area("Enter your comment",height=30)
-    comments_store.write(comment+"\n")
+    #comments_store.write(comment+"\n")
     prediction=""
     col1, col2, col3 , col4, col5 = st.columns(5)
     check = False

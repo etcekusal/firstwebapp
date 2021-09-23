@@ -28,9 +28,10 @@ import pickle
 
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
-
+'''
 comments_store = open("comments.txt","a")
 feedback_store = open("feedbacks.txt","a")
+'''
 num_tokens = len(tokenizer.word_index) + 2
 embedding_dim = 100
 embedding_layer = Embedding(num_tokens,embedding_dim,trainable=False)
@@ -59,7 +60,7 @@ def predict(tokenizer,model,comment):
     
 def main():
     comment = st.text_area("Enter your comment",height=30)
-    comments_store.write(comment+"\n")
+    #comments_store.write(comment+"\n")
     prediction=""
     col1, col2, col3 , col4, col5 = st.columns(5)
     check = False
@@ -92,7 +93,7 @@ def main():
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/ogg',start_time=0)
     feedback = st.text_area("Enter your feedback..",height=20)
-    feedback_store.write(feedback+"\n")
+    #feedback_store.write(feedback+"\n")
     check = st.button("Submit Feedback")
     if check==True:
           prediction = predict(tokenizer,model,feedback)
